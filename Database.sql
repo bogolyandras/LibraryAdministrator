@@ -6,10 +6,10 @@ CREATE TABLE application_users (
     id int IDENTITY(1,1) PRIMARY KEY,
     username nvarchar(255) NOT NULL UNIQUE,
     password nvarchar(255) NOT NULL,
-	role nvarchar(255) CHECK (role IN ('Customer', 'Administrator')),
+	role nvarchar(255) CHECK (role IN ('Vásárló', 'Adminisztrátor')),
 	name nvarchar(255),
 	street_address nvarchar (255),
-	date_of_birth_year int
+	year_of_birth int
 );
 
 CREATE TABLE categories (
@@ -40,11 +40,11 @@ CREATE TABLE book_lendings (
 	FOREIGN KEY (application_user_id) REFERENCES application_users(id)
 );
 
-INSERT INTO application_users(username, password, role, name, street_address, date_of_birth_year)
+INSERT INTO application_users(username, password, role, name, street_address, year_of_birth)
 VALUES
-('admin', 'admin', 'Administrator', 'Admin Béla', '', 1991),
-('customer1', 'customer1', 'Customer', 'Szabó János', '9023, Győr, Szigethy Attila út 106', 1984),
-('customer2', 'customer2', 'Customer', 'Nagy Árpád', '9023, Győr, Körkemence u. 2', 1987);
+('admin', 'admin', 'Adminisztrátor', 'Admin Béla', '', 1991),
+('vasarlo1', 'vasarlo1', 'Vásárló', 'Szabó János', '9023, Győr, Szigethy Attila út 106', 1984),
+('vasarlo2', 'vasarlo2', 'Vásárló', 'Nagy Árpád', '9023, Győr, Körkemence u. 2', 1987);
 
 INSERT INTO categories(name)
 VALUES ('Életmód'), ('Ezoterika'), ('Gasztronómia'), ('Gazdaság'), ('Informatika'), ('Irodalom');
