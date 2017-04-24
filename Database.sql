@@ -4,14 +4,14 @@
 
 CREATE TABLE application_users (
     id int IDENTITY(1,1) PRIMARY KEY,
-    username nvarchar(255) NOT NULL,
+    username nvarchar(255) NOT NULL UNIQUE,
     password nvarchar(255) NOT NULL,
 	role nvarchar(255) CHECK (role IN ('Customer', 'Administrator'))
 );
 
 CREATE TABLE customer_details (
 	id int IDENTITY(1,1) PRIMARY KEY,
-	application_user_id int NOT NULL,
+	application_user_id int NOT NULL UNIQUE,
 	name nvarchar(255),
 	lakcim nvarchar (255),
 	szuletesi_ev int,
@@ -20,12 +20,12 @@ CREATE TABLE customer_details (
 
 CREATE TABLE categories (
 	id int IDENTITY(1,1) PRIMARY KEY,
-	name varchar(255)
+	name varchar(255) UNIQUE
 );
 
 CREATE TABLE books (
 	id int IDENTITY(1,1) PRIMARY KEY,
-	title nvarchar(255) NOT NULL,
+	title nvarchar(255) NOT NULL UNIQUE,
 	category int NOT NULL,
 	description nvarchar(255),
 	author nvarchar(255),
@@ -37,9 +37,11 @@ CREATE TABLE books (
 
 CREATE TABLE book_lendings (
 	id int IDENTITY(1,1) PRIMARY KEY,
+	book_id int NOT NULL,
 	transaction_finished bit NOT NULL DEFAULT 0,
 	application_user_id int NOT NULL,
 	start_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	end_date DATETIME,
+	FOREIGN KEY (book_id) REFERENCES books(id),
 	FOREIGN KEY (application_user_id) REFERENCES application_users(id)
 );
