@@ -6,16 +6,10 @@ CREATE TABLE application_users (
     id int IDENTITY(1,1) PRIMARY KEY,
     username nvarchar(255) NOT NULL UNIQUE,
     password nvarchar(255) NOT NULL,
-	role nvarchar(255) CHECK (role IN ('Customer', 'Administrator'))
-);
-
-CREATE TABLE customer_details (
-	id int IDENTITY(1,1) PRIMARY KEY,
-	application_user_id int NOT NULL UNIQUE,
+	role nvarchar(255) CHECK (role IN ('Customer', 'Administrator')),
 	name nvarchar(255),
 	street_address nvarchar (255),
-	date_of_birth_year int,
-	FOREIGN KEY (application_user_id) REFERENCES application_users(id)
+	date_of_birth_year int
 );
 
 CREATE TABLE categories (
@@ -46,17 +40,11 @@ CREATE TABLE book_lendings (
 	FOREIGN KEY (application_user_id) REFERENCES application_users(id)
 );
 
-INSERT INTO application_users(username, password, role)
+INSERT INTO application_users(username, password, role, name, street_address, date_of_birth_year)
 VALUES
-('admin', 'admin', 'Administrator'),
-('customer1', 'customer1', 'Customer'),
-('customer2', 'customer2', 'Customer');
-
-
-INSERT INTO customer_details(application_user_id, name, street_address, date_of_birth_year)
-VALUES
-((SELECT id FROM application_users WHERE username='customer1'), 'Szabó János', '9023, Győr, Szigethy Attila út 106', 1984),
-((SELECT id FROM application_users WHERE username='customer2'), 'Nagy Árpád', '9023, Győr, Körkemence u. 2', 1987);
+('admin', 'admin', 'Administrator', 'Admin Béla', '', 1991),
+('customer1', 'customer1', 'Customer', 'Szabó János', '9023, Győr, Szigethy Attila út 106', 1984),
+('customer2', 'customer2', 'Customer', 'Nagy Árpád', '9023, Győr, Körkemence u. 2', 1987);
 
 INSERT INTO categories(name)
 VALUES ('Életmód'), ('Ezoterika'), ('Gasztronómia'), ('Gazdaság'), ('Informatika'), ('Irodalom');
