@@ -7,9 +7,7 @@
     End Sub
 
     Private Sub BooksAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'LibraryDataSet.books' table. You can move, or remove it, as needed.
-        Me.BooksTableAdapter.Fill(Me.LibraryDataSet.books)
-
+        reloadDataSet()
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles EditButton.Click
@@ -21,5 +19,9 @@
 
     Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs)
         BookDetailAdmin.ShowDialog()
+    End Sub
+
+    Public Sub reloadDataSet()
+        Me.BooksTableAdapter.Fill(Me.LibraryDataSet.books)
     End Sub
 End Class
