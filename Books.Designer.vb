@@ -29,6 +29,7 @@ Partial Class Books
         Me.title = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BooksTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.booksTableAdapter()
         Me.CategoriesTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.categoriesTableAdapter()
+        Me.openButton = New System.Windows.Forms.Button()
         CType(Me.BooksGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -90,12 +91,24 @@ Partial Class Books
         '
         Me.CategoriesTableAdapter.ClearBeforeFill = True
         '
+        'openButton
+        '
+        Me.openButton.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.openButton.Location = New System.Drawing.Point(13, 387)
+        Me.openButton.Name = "openButton"
+        Me.openButton.Size = New System.Drawing.Size(549, 23)
+        Me.openButton.TabIndex = 4
+        Me.openButton.Text = "Megnyitás"
+        Me.openButton.UseVisualStyleBackColor = True
+        '
         'Books
         '
         Me.AcceptButton = Me.searchButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(574, 393)
+        Me.ClientSize = New System.Drawing.Size(574, 422)
+        Me.Controls.Add(Me.openButton)
         Me.Controls.Add(Me.searchButton)
         Me.Controls.Add(Me.SearchBox)
         Me.Controls.Add(Me.CategoriesComboBox)
@@ -115,4 +128,5 @@ Partial Class Books
     Friend WithEvents title As DataGridViewTextBoxColumn
     Friend WithEvents BooksTableAdapter As libraryDataSetTableAdapters.booksTableAdapter
     Friend WithEvents CategoriesTableAdapter As libraryDataSetTableAdapters.categoriesTableAdapter
+    Friend WithEvents openButton As Button
 End Class

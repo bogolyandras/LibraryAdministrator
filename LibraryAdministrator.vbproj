@@ -92,6 +92,12 @@
     <Compile Include="AboutBox.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BookDetail.Designer.vb">
+      <DependentUpon>BookDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BookDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BookDetailAdmin.Designer.vb">
       <DependentUpon>BookDetailAdmin.vb</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookDetail.resx">
+      <DependentUpon>BookDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BookDetailAdmin.resx">
       <DependentUpon>BookDetailAdmin.vb</DependentUpon>

@@ -54,4 +54,11 @@
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         refreshResulst()
     End Sub
+
+    Private Sub openButton_Click(sender As Object, e As EventArgs) Handles openButton.Click
+        If BooksGridView.SelectedCells.Count > 0 Then
+            BookDetail.loadByTitle(BooksGridView.SelectedCells(0).Value)
+            BookDetail.ShowDialog()
+        End If
+    End Sub
 End Class
