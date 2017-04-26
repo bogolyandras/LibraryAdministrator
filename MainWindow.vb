@@ -1,4 +1,7 @@
-﻿Public Class MainWindow
+﻿Imports System.IO
+Imports System.Text
+
+Public Class MainWindow
     Private Sub OptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OptionsToolStripMenuItem.Click
         UsersWindow.ShowDialog()
     End Sub
@@ -65,5 +68,50 @@
     Private Sub KölcsönzésekToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KölcsönzésekToolStripMenuItem.Click
         BorrowsAdmin.refreshResulst()
         BorrowsAdmin.ShowDialog()
+    End Sub
+
+    Private Sub borrowExportButton_Click(sender As Object, e As EventArgs) Handles borrowExportButton.Click
+        SaveFileDialog.ShowDialog()
+    End Sub
+
+    Private Sub SaveFileDialog_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles SaveFileDialog.FileOk
+        Dim myStream = SaveFileDialog.OpenFile()
+        Dim a = New StreamWriter(myStream, New UTF8Encoding(True))
+
+        a.WriteLine("Felhasználónév,Könyv cím,Kölcsönzés állapota,Kölcsönzés kezdete,Kölcsönzés vége")
+
+        For Each BorrowRow In BookLendingsTableAdapter.GetData().Rows
+
+            Dim username As String = ""
+            Dim title As String = ""
+            Dim transactionState As String
+
+            For Each UserRow In ApplicationUsersTableAdapter.GetData().Rows
+                If UserRow("id") = BorrowRow("application_user_id") Then
+                    username = UserRow("username")
+                    Exit For
+                End If
+            Next
+
+            For Each BookRow In BooksTableAdapter.GetData().Rows
+                If BookRow("id") = BorrowRow("book_id") Then
+                    title = BookRow("title")
+                    Exit For
+                End If
+            Next
+
+            If BorrowRow("transaction_finished") Then
+                transactionState = "Befejezett"
+            Else
+                transactionState = "Folyamatban van"
+            End If
+
+            a.WriteLine(username + "," + title + "," + transactionState + "," + BorrowRow("start_date") + "," + BorrowRow("end_date"))
+
+        Next
+
+
+        a.Flush()
+        a.Close()
     End Sub
 End Class

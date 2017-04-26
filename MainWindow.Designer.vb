@@ -45,6 +45,13 @@ Partial Class MainWindow
         Me.BrowseToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.borrowExportButton = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveFileDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.BookLendingsTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.bookLendingsTableAdapter()
+        Me.CategoriesTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.categoriesTableAdapter()
+        Me.BooksTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.booksTableAdapter()
+        Me.ApplicationUsersTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.applicationUsersTableAdapter()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -118,7 +125,7 @@ Partial Class MainWindow
         '
         'AdminToolStripMenuItem
         '
-        Me.AdminToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.KategóriákToolStripMenuItem, Me.CustomizeToolStripMenuItem, Me.KölcsönzésekToolStripMenuItem})
+        Me.AdminToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.KategóriákToolStripMenuItem, Me.CustomizeToolStripMenuItem, Me.ToolStripSeparator1, Me.KölcsönzésekToolStripMenuItem, Me.borrowExportButton})
         Me.AdminToolStripMenuItem.Enabled = False
         Me.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem"
         Me.AdminToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
@@ -127,25 +134,25 @@ Partial Class MainWindow
         'OptionsToolStripMenuItem
         '
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.OptionsToolStripMenuItem.Text = "&Felhasználók"
         '
         'KategóriákToolStripMenuItem
         '
         Me.KategóriákToolStripMenuItem.Name = "KategóriákToolStripMenuItem"
-        Me.KategóriákToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.KategóriákToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.KategóriákToolStripMenuItem.Text = "&Könyvkategóriák"
         '
         'CustomizeToolStripMenuItem
         '
         Me.CustomizeToolStripMenuItem.Name = "CustomizeToolStripMenuItem"
-        Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.CustomizeToolStripMenuItem.Text = "Kö&nyvek"
         '
         'KölcsönzésekToolStripMenuItem
         '
         Me.KölcsönzésekToolStripMenuItem.Name = "KölcsönzésekToolStripMenuItem"
-        Me.KölcsönzésekToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.KölcsönzésekToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.KölcsönzésekToolStripMenuItem.Text = "Kö&lcsönzések"
         '
         'HelpToolStripMenuItem
@@ -211,6 +218,37 @@ Partial Class MainWindow
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(203, 6)
+        '
+        'borrowExportButton
+        '
+        Me.borrowExportButton.Name = "borrowExportButton"
+        Me.borrowExportButton.Size = New System.Drawing.Size(206, 22)
+        Me.borrowExportButton.Text = "Kölcsönzések Exportálása"
+        '
+        'SaveFileDialog
+        '
+        Me.SaveFileDialog.DefaultExt = "csv"
+        '
+        'BookLendingsTableAdapter
+        '
+        Me.BookLendingsTableAdapter.ClearBeforeFill = True
+        '
+        'CategoriesTableAdapter
+        '
+        Me.CategoriesTableAdapter.ClearBeforeFill = True
+        '
+        'BooksTableAdapter
+        '
+        Me.BooksTableAdapter.ClearBeforeFill = True
+        '
+        'ApplicationUsersTableAdapter
+        '
+        Me.ApplicationUsersTableAdapter.ClearBeforeFill = True
+        '
         'MainWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -253,4 +291,11 @@ Partial Class MainWindow
     Friend WithEvents KategóriákToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents KölcsönzésekToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogoutMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents borrowExportButton As ToolStripMenuItem
+    Friend WithEvents SaveFileDialog As SaveFileDialog
+    Friend WithEvents BookLendingsTableAdapter As libraryDataSetTableAdapters.bookLendingsTableAdapter
+    Friend WithEvents CategoriesTableAdapter As libraryDataSetTableAdapters.categoriesTableAdapter
+    Friend WithEvents BooksTableAdapter As libraryDataSetTableAdapters.booksTableAdapter
+    Friend WithEvents ApplicationUsersTableAdapter As libraryDataSetTableAdapters.applicationUsersTableAdapter
 End Class
