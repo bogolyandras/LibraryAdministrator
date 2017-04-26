@@ -9,6 +9,9 @@
     ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
+        Status.LoggedIn = True
+        Status.IsAdmin = True
+        My.MyProject.Forms.MainWindow.ReshapeMyself()
         Me.Close()
     End Sub
 

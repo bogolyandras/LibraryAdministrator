@@ -25,32 +25,33 @@ Partial Class MainWindow
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainWindow))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoginStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
-        Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BrowseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MyBooksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AdminToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KategóriákToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomizeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KölcsönzésekToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.NewToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.OpenToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.LoginToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.BrowseToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.LogoutMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ToolsToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.AdminToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(764, 24)
@@ -59,41 +60,43 @@ Partial Class MainWindow
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.toolStripSeparator, Me.OpenToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.toolStripSeparator2, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginStripMenuItem, Me.LogoutMenuItem, Me.toolStripSeparator, Me.BrowseToolStripMenuItem, Me.MyBooksToolStripMenuItem, Me.toolStripSeparator2, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&Fájl"
         '
-        'NewToolStripMenuItem
+        'LoginStripMenuItem
         '
-        Me.NewToolStripMenuItem.Image = CType(resources.GetObject("NewToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-        Me.NewToolStripMenuItem.Text = "&Bejelentkezés"
-        '
-        'OpenToolStripMenuItem
-        '
-        Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.OpenToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-        Me.OpenToolStripMenuItem.Text = "&Böngészés"
+        Me.LoginStripMenuItem.Image = CType(resources.GetObject("LoginStripMenuItem.Image"), System.Drawing.Image)
+        Me.LoginStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.LoginStripMenuItem.Name = "LoginStripMenuItem"
+        Me.LoginStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.LoginStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.LoginStripMenuItem.Text = "&Bejelentkezés"
         '
         'toolStripSeparator
         '
         Me.toolStripSeparator.Name = "toolStripSeparator"
         Me.toolStripSeparator.Size = New System.Drawing.Size(184, 6)
         '
-        'PrintPreviewToolStripMenuItem
+        'BrowseToolStripMenuItem
         '
-        Me.PrintPreviewToolStripMenuItem.Image = CType(resources.GetObject("PrintPreviewToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PrintPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-        Me.PrintPreviewToolStripMenuItem.Text = "Könyveim"
+        Me.BrowseToolStripMenuItem.Enabled = False
+        Me.BrowseToolStripMenuItem.Image = CType(resources.GetObject("BrowseToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.BrowseToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BrowseToolStripMenuItem.Name = "BrowseToolStripMenuItem"
+        Me.BrowseToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.BrowseToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.BrowseToolStripMenuItem.Text = "&Böngészés"
+        '
+        'MyBooksToolStripMenuItem
+        '
+        Me.MyBooksToolStripMenuItem.Enabled = False
+        Me.MyBooksToolStripMenuItem.Image = CType(resources.GetObject("MyBooksToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MyBooksToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.MyBooksToolStripMenuItem.Name = "MyBooksToolStripMenuItem"
+        Me.MyBooksToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.MyBooksToolStripMenuItem.Text = "Könyveim"
         '
         'toolStripSeparator2
         '
@@ -106,12 +109,19 @@ Partial Class MainWindow
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.ExitToolStripMenuItem.Text = "&Kilépés"
         '
-        'ToolsToolStripMenuItem
+        'AdminToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.KategóriákToolStripMenuItem, Me.CustomizeToolStripMenuItem, Me.KölcsönzésekToolStripMenuItem})
-        Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
-        Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
-        Me.ToolsToolStripMenuItem.Text = "&Adminisztráció"
+        Me.AdminToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OptionsToolStripMenuItem, Me.KategóriákToolStripMenuItem, Me.CustomizeToolStripMenuItem, Me.KölcsönzésekToolStripMenuItem})
+        Me.AdminToolStripMenuItem.Enabled = False
+        Me.AdminToolStripMenuItem.Name = "AdminToolStripMenuItem"
+        Me.AdminToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
+        Me.AdminToolStripMenuItem.Text = "&Adminisztráció"
+        '
+        'OptionsToolStripMenuItem
+        '
+        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.OptionsToolStripMenuItem.Text = "&Felhasználók"
         '
         'KategóriákToolStripMenuItem
         '
@@ -124,12 +134,6 @@ Partial Class MainWindow
         Me.CustomizeToolStripMenuItem.Name = "CustomizeToolStripMenuItem"
         Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.CustomizeToolStripMenuItem.Text = "Kö&nyvek"
-        '
-        'OptionsToolStripMenuItem
-        '
-        Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.OptionsToolStripMenuItem.Text = "&Felhasználók"
         '
         'KölcsönzésekToolStripMenuItem
         '
@@ -160,30 +164,31 @@ Partial Class MainWindow
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.OpenToolStripButton, Me.toolStripSeparator7, Me.HelpToolStripButton})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginToolStripButton, Me.BrowseToolStripButton, Me.toolStripSeparator7, Me.HelpToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(764, 25)
         Me.ToolStrip1.TabIndex = 2
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'NewToolStripButton
+        'LoginToolStripButton
         '
-        Me.NewToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.NewToolStripButton.Image = CType(resources.GetObject("NewToolStripButton.Image"), System.Drawing.Image)
-        Me.NewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.NewToolStripButton.Name = "NewToolStripButton"
-        Me.NewToolStripButton.Size = New System.Drawing.Size(23, 22)
-        Me.NewToolStripButton.Text = "&Bejelentkezés"
+        Me.LoginToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.LoginToolStripButton.Image = CType(resources.GetObject("LoginToolStripButton.Image"), System.Drawing.Image)
+        Me.LoginToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.LoginToolStripButton.Name = "LoginToolStripButton"
+        Me.LoginToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.LoginToolStripButton.Text = "&Bejelentkezés"
         '
-        'OpenToolStripButton
+        'BrowseToolStripButton
         '
-        Me.OpenToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.OpenToolStripButton.Image = CType(resources.GetObject("OpenToolStripButton.Image"), System.Drawing.Image)
-        Me.OpenToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.OpenToolStripButton.Name = "OpenToolStripButton"
-        Me.OpenToolStripButton.Size = New System.Drawing.Size(23, 22)
-        Me.OpenToolStripButton.Text = "&Open"
+        Me.BrowseToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BrowseToolStripButton.Enabled = False
+        Me.BrowseToolStripButton.Image = CType(resources.GetObject("BrowseToolStripButton.Image"), System.Drawing.Image)
+        Me.BrowseToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BrowseToolStripButton.Name = "BrowseToolStripButton"
+        Me.BrowseToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.BrowseToolStripButton.Text = "&Open"
         '
         'toolStripSeparator7
         '
@@ -198,6 +203,13 @@ Partial Class MainWindow
         Me.HelpToolStripButton.Name = "HelpToolStripButton"
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
+        '
+        'LogoutMenuItem
+        '
+        Me.LogoutMenuItem.Enabled = False
+        Me.LogoutMenuItem.Name = "LogoutMenuItem"
+        Me.LogoutMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.LogoutMenuItem.Text = "Kijelentkezés"
         '
         'MainWindow
         '
@@ -221,23 +233,24 @@ Partial Class MainWindow
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents OpenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoginStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BrowseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents toolStripSeparator As ToolStripSeparator
-    Friend WithEvents PrintPreviewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MyBooksToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents toolStripSeparator2 As ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AdminToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CustomizeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents NewToolStripButton As ToolStripButton
-    Friend WithEvents OpenToolStripButton As ToolStripButton
+    Friend WithEvents LoginToolStripButton As ToolStripButton
+    Friend WithEvents BrowseToolStripButton As ToolStripButton
     Friend WithEvents toolStripSeparator7 As ToolStripSeparator
     Friend WithEvents HelpToolStripButton As ToolStripButton
     Friend WithEvents KategóriákToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents KölcsönzésekToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LogoutMenuItem As ToolStripMenuItem
 End Class
