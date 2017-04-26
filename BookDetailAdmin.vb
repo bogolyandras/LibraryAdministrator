@@ -27,15 +27,38 @@
 
     End Sub
 
+    Sub newBook()
+        TitleBox.Text = ""
+        DescriptionBox.Text = ""
+        AuthorBox.Text = ""
+        PublishYearBox.Text = ""
+        ISBNBox.Text = ""
+        CategoriesComboBox.Items.Clear()
+        For Each CategoryRow In CategoriesTableAdapter.GetData().Rows
+            Dim a As ComboBoxItem
+            a = New ComboBoxItem
+            a.id = CategoryRow("id")
+            a.name = CategoryRow("name")
+            Dim index = CategoriesComboBox.Items.Add(a)
+        Next
+        CategoriesComboBox.SelectedIndex = 0
+        BookDataRow = Nothing
+    End Sub
+
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-        BookDataRow("title") = TitleBox.Text
-        BookDataRow("description") = DescriptionBox.Text
-        BookDataRow("author") = AuthorBox.Text
-        BookDataRow("year_of_publishing") = PublishYearBox.Text
-        BookDataRow("isbn") = ISBNBox.Text
-        BookDataRow("category_id") = CType(CategoriesComboBox.SelectedItem, ComboBoxItem).id
-        BooksTableAdapter.Update(BookDataRow)
+        If BookDataRow Is Nothing Then
+            BooksTableAdapter.Insert(TitleBox.Text, CType(CategoriesComboBox.SelectedItem, ComboBoxItem).id, DescriptionBox.Text, AuthorBox.Text, PublishYearBox.Text, ISBNBox.Text, 1)
+        Else
+            BookDataRow("title") = TitleBox.Text
+            BookDataRow("description") = DescriptionBox.Text
+            BookDataRow("author") = AuthorBox.Text
+            BookDataRow("year_of_publishing") = PublishYearBox.Text
+            BookDataRow("isbn") = ISBNBox.Text
+            BookDataRow("category_id") = CType(CategoriesComboBox.SelectedItem, ComboBoxItem).id
+            BooksTableAdapter.Update(BookDataRow)
+        End If
+
         Close()
-        'BooksAdmin.asd()
+        BooksAdmin.reloadDataSet()
     End Sub
 End Class

@@ -29,21 +29,21 @@ Partial Class BooksAdmin
         Me.BooksTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.booksTableAdapter()
         Me.TableAdapterManager = New LibraryAdministrator.libraryDataSetTableAdapters.TableAdapterManager()
         Me.BooksBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.NewButton = New System.Windows.Forms.ToolStripButton()
+        Me.EditButton = New System.Windows.Forms.ToolStripButton()
         Me.BooksBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.BooksDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EditButton = New System.Windows.Forms.ToolStripButton()
-        Me.NewButton = New System.Windows.Forms.ToolStripButton()
         CType(Me.LibraryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BooksBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BooksBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,6 +92,22 @@ Partial Class BooksAdmin
         Me.BooksBindingNavigator.TabIndex = 0
         Me.BooksBindingNavigator.Text = "BindingNavigator1"
         '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
+        Me.BindingNavigatorDeleteItem.Text = "Törlés"
+        '
         'BindingNavigatorMoveFirstItem
         '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -124,16 +140,9 @@ Partial Class BooksAdmin
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(35, 22)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
         Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'BindingNavigatorMoveNextItem
@@ -156,17 +165,26 @@ Partial Class BooksAdmin
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
-        'BindingNavigatorDeleteItem
+        'NewButton
         '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(23, 22)
-        Me.BindingNavigatorDeleteItem.Text = "Törlés"
+        Me.NewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.NewButton.Image = CType(resources.GetObject("NewButton.Image"), System.Drawing.Image)
+        Me.NewButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.NewButton.Name = "NewButton"
+        Me.NewButton.Size = New System.Drawing.Size(23, 22)
+        Me.NewButton.Text = "Új könyv hozzáadása"
+        '
+        'EditButton
+        '
+        Me.EditButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.EditButton.Image = CType(resources.GetObject("EditButton.Image"), System.Drawing.Image)
+        Me.EditButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.EditButton.Name = "EditButton"
+        Me.EditButton.Size = New System.Drawing.Size(23, 22)
+        Me.EditButton.Text = "Szerkesztés"
         '
         'BooksBindingNavigatorSaveItem
         '
@@ -199,24 +217,6 @@ Partial Class BooksAdmin
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         Me.DataGridViewTextBoxColumn2.ReadOnly = True
         Me.DataGridViewTextBoxColumn2.Width = 300
-        '
-        'EditButton
-        '
-        Me.EditButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.EditButton.Image = CType(resources.GetObject("EditButton.Image"), System.Drawing.Image)
-        Me.EditButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.EditButton.Name = "EditButton"
-        Me.EditButton.Size = New System.Drawing.Size(23, 22)
-        Me.EditButton.Text = "Szerkesztés"
-        '
-        'NewButton
-        '
-        Me.NewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.NewButton.Image = CType(resources.GetObject("NewButton.Image"), System.Drawing.Image)
-        Me.NewButton.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.NewButton.Name = "NewButton"
-        Me.NewButton.Size = New System.Drawing.Size(23, 22)
-        Me.NewButton.Text = "Új könyv hozzáadása"
         '
         'BooksAdmin
         '

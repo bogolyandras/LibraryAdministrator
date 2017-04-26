@@ -24,4 +24,9 @@
     Public Sub reloadDataSet()
         Me.BooksTableAdapter.Fill(Me.LibraryDataSet.books)
     End Sub
+
+    Private Sub NewButton_Click(sender As Object, e As EventArgs) Handles NewButton.Click
+        BookDetailAdmin.newBook()
+        BookDetailAdmin.ShowDialog()
+    End Sub
 End Class
