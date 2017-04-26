@@ -9,10 +9,22 @@
     ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        Status.LoggedIn = True
-        Status.IsAdmin = True
-        My.MyProject.Forms.MainWindow.ReshapeMyself()
-        Me.Close()
+        For Each UserDataRow In ApplicationUsersTableAdapter.GetData().Rows
+            If UserDataRow("username") = UsernameTextBox.Text Then
+                If UserDataRow("password") = PasswordTextBox.Text Then
+                    Status.LoggedIn = True
+                    Status.IsAdmin = UserDataRow("role").Equals("Adminisztrátor")
+                    Status.UserId = Long.Parse(UserDataRow("id"))
+                    Exit For
+                End If
+            End If
+        Next
+        If Not Status.LoggedIn Then
+            MsgBox("Helytelen Felhasználónév vagy jelszó!")
+        Else
+            My.MyProject.Forms.MainWindow.ReshapeMyself()
+            Close()
+        End If
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click

@@ -38,6 +38,7 @@ Partial Class LoginForm
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
+        Me.ApplicationUsersTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.applicationUsersTableAdapter()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,6 +101,10 @@ Partial Class LoginForm
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Mégsem"
         '
+        'ApplicationUsersTableAdapter
+        '
+        Me.ApplicationUsersTableAdapter.ClearBeforeFill = True
+        '
         'LoginForm
         '
         Me.AcceptButton = Me.OK
@@ -127,4 +132,5 @@ Partial Class LoginForm
 
     End Sub
 
+    Friend WithEvents ApplicationUsersTableAdapter As libraryDataSetTableAdapters.applicationUsersTableAdapter
 End Class
