@@ -1,5 +1,6 @@
 ﻿Public Class BookDetail
 
+    Private Shared selectedDataRow As DataRow
 
     Sub loadByTitle(ByVal bookTitle As String)
         For Each BookRow In BooksTableAdapter.GetData().Rows
@@ -14,9 +15,18 @@
                         categoryLabel.Text = CategoryRow("name")
                     End If
                 Next
+                selectedDataRow = BookRow
             End If
         Next
         borrowButton.Focus()
     End Sub
 
+    Private Sub borrowButton_Click(sender As Object, e As EventArgs) Handles borrowButton.Click
+        BookLendingsTableAdapter.Insert(selectedDataRow("id"), False, Status.UserId, DateTime.Now, Nothing)
+        selectedDataRow("available") = selectedDataRow("available") - 1
+        BooksTableAdapter.Update(selectedDataRow)
+        MsgBox("A kölcsönzés sikeres volt!")
+        Close()
+        Books.refreshResulst()
+    End Sub
 End Class

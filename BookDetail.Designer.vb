@@ -31,6 +31,7 @@ Partial Class BookDetail
         Me.borrowButton = New System.Windows.Forms.Button()
         Me.CategoriesTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.categoriesTableAdapter()
         Me.BooksTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.booksTableAdapter()
+        Me.BookLendingsTableAdapter = New LibraryAdministrator.libraryDataSetTableAdapters.bookLendingsTableAdapter()
         Me.SuspendLayout()
         '
         'titleLabel
@@ -108,6 +109,10 @@ Partial Class BookDetail
         '
         Me.BooksTableAdapter.ClearBeforeFill = True
         '
+        'BookLendingsTableAdapter
+        '
+        Me.BookLendingsTableAdapter.ClearBeforeFill = True
+        '
         'BookDetail
         '
         Me.AcceptButton = Me.borrowButton
@@ -137,4 +142,5 @@ Partial Class BookDetail
     Friend WithEvents borrowButton As Button
     Friend WithEvents CategoriesTableAdapter As libraryDataSetTableAdapters.categoriesTableAdapter
     Friend WithEvents BooksTableAdapter As libraryDataSetTableAdapters.booksTableAdapter
+    Friend WithEvents BookLendingsTableAdapter As libraryDataSetTableAdapters.bookLendingsTableAdapter
 End Class
