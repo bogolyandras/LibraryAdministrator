@@ -47,4 +47,13 @@
     Private Sub CustomizeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomizeToolStripMenuItem.Click
         BooksAdmin.ShowDialog()
     End Sub
+
+    Private Sub BrowseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BrowseToolStripMenuItem.Click
+        Books.loadBooks()
+        Books.ShowDialog()
+    End Sub
+
+    Private Sub BrowseToolStripButton_Click(sender As Object, e As EventArgs) Handles BrowseToolStripButton.Click
+        BrowseToolStripMenuItem_Click(sender, e)
+    End Sub
 End Class

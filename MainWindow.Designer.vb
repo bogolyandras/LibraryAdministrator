@@ -195,7 +195,7 @@ Partial Class MainWindow
         Me.BrowseToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BrowseToolStripButton.Name = "BrowseToolStripButton"
         Me.BrowseToolStripButton.Size = New System.Drawing.Size(23, 22)
-        Me.BrowseToolStripButton.Text = "&Open"
+        Me.BrowseToolStripButton.Text = "Böngészés"
         '
         'toolStripSeparator7
         '
