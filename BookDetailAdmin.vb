@@ -1,4 +1,7 @@
 ﻿Public Class BookDetailAdmin
+
+    Private Shared BookId As Long
+
     Sub loadByTitle(ByVal bookTitle As String)
 
         Dim categoryId As Long
@@ -6,6 +9,11 @@
         For Each BookRow In BooksTableAdapter.GetData().Rows
             If BookRow("title").Equals(bookTitle) Then
                 categoryId = BookRow("category_id")
+                DescriptionBox.Text = BookRow("description")
+                AuthorBox.Text = BookRow("author")
+                PublishYearBox.Text = BookRow("year_of_publishing")
+                ISBNBox.Text = BookRow("isbn")
+                BookId = BookRow("id")
             End If
         Next
 
