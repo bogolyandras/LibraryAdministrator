@@ -61,4 +61,9 @@
         Borrows.refreshResulst()
         Borrows.ShowDialog()
     End Sub
+
+    Private Sub KölcsönzésekToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KölcsönzésekToolStripMenuItem.Click
+        BorrowsAdmin.refreshResulst()
+        BorrowsAdmin.ShowDialog()
+    End Sub
 End Class
