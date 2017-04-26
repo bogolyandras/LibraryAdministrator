@@ -122,19 +122,19 @@ Partial Class MainWindow
         'CustomizeToolStripMenuItem
         '
         Me.CustomizeToolStripMenuItem.Name = "CustomizeToolStripMenuItem"
-        Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CustomizeToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.CustomizeToolStripMenuItem.Text = "Kö&nyvek"
         '
         'OptionsToolStripMenuItem
         '
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
-        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.OptionsToolStripMenuItem.Text = "&Felhasználók"
         '
         'KölcsönzésekToolStripMenuItem
         '
         Me.KölcsönzésekToolStripMenuItem.Name = "KölcsönzésekToolStripMenuItem"
-        Me.KölcsönzésekToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KölcsönzésekToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
         Me.KölcsönzésekToolStripMenuItem.Text = "Kö&lcsönzések"
         '
         'HelpToolStripMenuItem
@@ -174,7 +174,7 @@ Partial Class MainWindow
         Me.NewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.NewToolStripButton.Name = "NewToolStripButton"
         Me.NewToolStripButton.Size = New System.Drawing.Size(23, 22)
-        Me.NewToolStripButton.Text = "&New"
+        Me.NewToolStripButton.Text = "&Bejelentkezés"
         '
         'OpenToolStripButton
         '
