@@ -26,6 +26,7 @@ Partial Class MainWindow
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoginStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogoutMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BrowseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MyBooksToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,7 +45,6 @@ Partial Class MainWindow
         Me.BrowseToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.LogoutMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -73,6 +73,13 @@ Partial Class MainWindow
         Me.LoginStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
         Me.LoginStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.LoginStripMenuItem.Text = "&Bejelentkezés"
+        '
+        'LogoutMenuItem
+        '
+        Me.LogoutMenuItem.Enabled = False
+        Me.LogoutMenuItem.Name = "LogoutMenuItem"
+        Me.LogoutMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.LogoutMenuItem.Text = "Kijelentkezés"
         '
         'toolStripSeparator
         '
@@ -203,13 +210,6 @@ Partial Class MainWindow
         Me.HelpToolStripButton.Name = "HelpToolStripButton"
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
-        '
-        'LogoutMenuItem
-        '
-        Me.LogoutMenuItem.Enabled = False
-        Me.LogoutMenuItem.Name = "LogoutMenuItem"
-        Me.LogoutMenuItem.Size = New System.Drawing.Size(187, 22)
-        Me.LogoutMenuItem.Text = "Kijelentkezés"
         '
         'MainWindow
         '

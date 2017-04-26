@@ -43,4 +43,8 @@
         Status.IsAdmin = False
         ReshapeMyself()
     End Sub
+
+    Private Sub CustomizeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomizeToolStripMenuItem.Click
+        BooksAdmin.ShowDialog()
+    End Sub
 End Class
