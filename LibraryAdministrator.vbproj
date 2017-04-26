@@ -116,6 +116,12 @@
     <Compile Include="BooksAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Borrows.Designer.vb">
+      <DependentUpon>Borrows.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Borrows.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CategoriesWindow.Designer.vb">
       <DependentUpon>CategoriesWindow.vb</DependentUpon>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BooksAdmin.resx">
       <DependentUpon>BooksAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Borrows.resx">
+      <DependentUpon>Borrows.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CategoriesWindow.resx">
       <DependentUpon>CategoriesWindow.vb</DependentUpon>

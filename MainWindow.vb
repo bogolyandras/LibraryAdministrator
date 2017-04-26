@@ -56,4 +56,9 @@
     Private Sub BrowseToolStripButton_Click(sender As Object, e As EventArgs) Handles BrowseToolStripButton.Click
         BrowseToolStripMenuItem_Click(sender, e)
     End Sub
+
+    Private Sub MyBooksToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MyBooksToolStripMenuItem.Click
+        Borrows.refreshResulst()
+        Borrows.ShowDialog()
+    End Sub
 End Class

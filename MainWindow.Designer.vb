@@ -71,20 +71,20 @@ Partial Class MainWindow
         Me.LoginStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.LoginStripMenuItem.Name = "LoginStripMenuItem"
         Me.LoginStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.LoginStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.LoginStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.LoginStripMenuItem.Text = "&Bejelentkezés"
         '
         'LogoutMenuItem
         '
         Me.LogoutMenuItem.Enabled = False
         Me.LogoutMenuItem.Name = "LogoutMenuItem"
-        Me.LogoutMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.LogoutMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.LogoutMenuItem.Text = "Kijelentkezés"
         '
         'toolStripSeparator
         '
         Me.toolStripSeparator.Name = "toolStripSeparator"
-        Me.toolStripSeparator.Size = New System.Drawing.Size(184, 6)
+        Me.toolStripSeparator.Size = New System.Drawing.Size(188, 6)
         '
         'BrowseToolStripMenuItem
         '
@@ -93,7 +93,7 @@ Partial Class MainWindow
         Me.BrowseToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BrowseToolStripMenuItem.Name = "BrowseToolStripMenuItem"
         Me.BrowseToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.BrowseToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.BrowseToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.BrowseToolStripMenuItem.Text = "&Böngészés"
         '
         'MyBooksToolStripMenuItem
@@ -102,18 +102,18 @@ Partial Class MainWindow
         Me.MyBooksToolStripMenuItem.Image = CType(resources.GetObject("MyBooksToolStripMenuItem.Image"), System.Drawing.Image)
         Me.MyBooksToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.MyBooksToolStripMenuItem.Name = "MyBooksToolStripMenuItem"
-        Me.MyBooksToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
-        Me.MyBooksToolStripMenuItem.Text = "Könyveim"
+        Me.MyBooksToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
+        Me.MyBooksToolStripMenuItem.Text = "Kölcsönzött könyveim"
         '
         'toolStripSeparator2
         '
         Me.toolStripSeparator2.Name = "toolStripSeparator2"
-        Me.toolStripSeparator2.Size = New System.Drawing.Size(184, 6)
+        Me.toolStripSeparator2.Size = New System.Drawing.Size(188, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.ExitToolStripMenuItem.Text = "&Kilépés"
         '
         'AdminToolStripMenuItem
