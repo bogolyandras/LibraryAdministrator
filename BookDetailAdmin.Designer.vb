@@ -37,6 +37,9 @@ Partial Class BookDetailAdmin
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.availablePieces = New System.Windows.Forms.NumericUpDown()
+        Me.Label7 = New System.Windows.Forms.Label()
+        CType(Me.availablePieces, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BooksTableAdapter
@@ -46,7 +49,7 @@ Partial Class BookDetailAdmin
         'SaveButton
         '
         Me.SaveButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SaveButton.Location = New System.Drawing.Point(488, 259)
+        Me.SaveButton.Location = New System.Drawing.Point(488, 279)
         Me.SaveButton.Name = "SaveButton"
         Me.SaveButton.Size = New System.Drawing.Size(75, 23)
         Me.SaveButton.TabIndex = 0
@@ -163,11 +166,29 @@ Partial Class BookDetailAdmin
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "ISBN"
         '
+        'availablePieces
+        '
+        Me.availablePieces.Location = New System.Drawing.Point(198, 244)
+        Me.availablePieces.Name = "availablePieces"
+        Me.availablePieces.Size = New System.Drawing.Size(365, 20)
+        Me.availablePieces.TabIndex = 13
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(15, 250)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(98, 13)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Elérhető példányok"
+        '
         'BookDetailAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(575, 294)
+        Me.ClientSize = New System.Drawing.Size(575, 314)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.availablePieces)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -183,6 +204,7 @@ Partial Class BookDetailAdmin
         Me.Controls.Add(Me.SaveButton)
         Me.Name = "BookDetailAdmin"
         Me.Text = "Könyv szerkesztése"
+        CType(Me.availablePieces, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -203,4 +225,6 @@ Partial Class BookDetailAdmin
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents availablePieces As NumericUpDown
+    Friend WithEvents Label7 As Label
 End Class

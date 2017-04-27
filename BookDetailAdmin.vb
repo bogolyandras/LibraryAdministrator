@@ -10,6 +10,7 @@
                 AuthorBox.Text = BookRow("author")
                 PublishYearBox.Text = BookRow("year_of_publishing")
                 ISBNBox.Text = BookRow("isbn")
+                availablePieces.Value = BookRow("available")
                 CategoriesComboBox.Items.Clear()
                 For Each CategoryRow In CategoriesTableAdapter.GetData().Rows
                     Dim a As ComboBoxItem
@@ -33,6 +34,7 @@
         AuthorBox.Text = ""
         PublishYearBox.Text = ""
         ISBNBox.Text = ""
+        availablePieces.Value = 1
         CategoriesComboBox.Items.Clear()
         For Each CategoryRow In CategoriesTableAdapter.GetData().Rows
             Dim a As ComboBoxItem
@@ -47,7 +49,7 @@
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         If BookDataRow Is Nothing Then
-            BooksTableAdapter.Insert(TitleBox.Text, CType(CategoriesComboBox.SelectedItem, ComboBoxItem).id, DescriptionBox.Text, AuthorBox.Text, PublishYearBox.Text, ISBNBox.Text, 1)
+            BooksTableAdapter.Insert(TitleBox.Text, CType(CategoriesComboBox.SelectedItem, ComboBoxItem).id, DescriptionBox.Text, AuthorBox.Text, PublishYearBox.Text, ISBNBox.Text, availablePieces.Value)
         Else
             BookDataRow("title") = TitleBox.Text
             BookDataRow("description") = DescriptionBox.Text
@@ -55,6 +57,7 @@
             BookDataRow("year_of_publishing") = PublishYearBox.Text
             BookDataRow("isbn") = ISBNBox.Text
             BookDataRow("category_id") = CType(CategoriesComboBox.SelectedItem, ComboBoxItem).id
+            BookDataRow("available") = availablePieces.Value
             BooksTableAdapter.Update(BookDataRow)
         End If
 
